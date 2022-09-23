@@ -1,54 +1,59 @@
 #include<stdio.h>
 #include<stdlib.h>
-
-struct record
+struct node 
 {
-	int roll;
-	struct record *ptr;
+	int data;
+	struct node *next;
 };
 
-void print(struct record *list_beg)
+void print(struct node *head)
 {
-
-	if(list_beg==NULL)
-	{
-		return;
-	}
-	printf("record %d",list_beg->roll);
-	print(list_beg->ptr);
+	if(head==NULL)return;
+	printf("\ndata : %d",head->data);
+	print(head->next);
 }
-void reverse(struct record** list_beg)
+
+struct node *reverse(struct node *head)
 {
-    struct record* prev = NULL;
-    struct record* current = *list_beg;
-    struct record* ptr = NULL;
-    while (current != NULL) {
-        ptr = current->ptr;
-        current->ptr = prev;
-        prev = current;
-        current = ptr;
-    }
-    *list_beg = prev;
+	struct node *p,*c,*n;
+	p=NULL;
+	c=head;
+	n=c->next;
+	while(c!=NULL)
+	{
+		c->next=p;
+		p=c;
+		c=n;
+		if(n!=NULL)
+		n=n->next;
+	}
+	return p;
 }
 
 int main()
 {
-	struct record *list_beg=NULL ,*ptr_t=NULL;
+	struct node *head=NULL, *ptr=NULL;
 	int i, n;
-	printf("Enter the number of records: ");
+	printf("Enter the number of nodes: ");
 	scanf("%d",&n);
 	for(i=0;i<n;i++)
 	{
-		if(list_beg==NULL)
+		if(head==NULL)
 		{
-			list_beg=ptr_t=(struct record*)malloc(sizeof(struct record));
+			head=ptr=(struct node*)malloc(sizeof(struct node));
 		}
-		else{
-			ptr_t->ptr=(struct record*)malloc(sizeof(struct record));
-			ptr_t=ptr_t->ptr;
+		else
+		{
+			ptr->next=(struct node*)malloc(sizeof(struct node));
+			ptr=ptr->next;
 		}
-		printf("\nrecord[%d] : ",i);
-		scanf("%d",ptr_t->roll);
+		printf("Node [%d] : ",i);
+		scanf("%d",&ptr->data);
 	}
-	print(list_beg);
+	ptr->next=NULL;
+	print(head);
+	head=reverse(head);
+	printf("\nReverse\n");
+	print(head);
+	return 0;
 }
