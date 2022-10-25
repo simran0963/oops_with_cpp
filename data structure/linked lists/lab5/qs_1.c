@@ -9,7 +9,7 @@ struct node
 
 struct node *start(struct node *head)
 {
-struct node *temp=head;
+    struct node *temp=head;
     if(head==NULL)
     {
         printf("list underflow");                   //underflow

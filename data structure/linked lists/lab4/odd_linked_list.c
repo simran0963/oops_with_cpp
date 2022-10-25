@@ -23,11 +23,11 @@ void odd(struct record *list_beg)
 		return;
 	}
 	
-		if(list_beg->roll%2==1)
-		{
-			printf("\n%d",list_beg->roll);
-		}
-		odd(list_beg->ptr);
+	if(list_beg->roll%2==1)
+	{
+		printf("\n%d",list_beg->roll);
+	}
+	odd(list_beg->ptr);
 }
 
 int main()

@@ -71,7 +71,7 @@ int main()
         scanf("%d",&ptr->data);
     }
     ptr->next==NULL;
-    print(head);
+    print(head);  
     printf("\nEnter your choice :\n1. Deleting at the begining.\n2. Deleting at the end.\n");
     scanf("%d",&ch);
     switch(ch)
