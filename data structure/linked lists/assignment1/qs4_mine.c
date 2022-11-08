@@ -47,7 +47,7 @@ int pop(){
 void order(int arr[],int temp){
 	if(isEmpty() || peek()>temp){
 		push(temp);
-		return;;
+		return;
 	}
 	int ele=pop();
 	order(arr,temp);
@@ -68,10 +68,11 @@ void display(){
 		printf("Stack Underflow");
 		return;
 	}
-	for(int i=0;i>=0;i--){
-		printf("%d\t",arr[top]);
+	for(int i=top;i>=0;i--){
+		printf("%d\t",arr[i]);
 	}	
 }
+
 
 int main()
 {
