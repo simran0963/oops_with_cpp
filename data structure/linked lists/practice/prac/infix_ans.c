@@ -1,15 +1,18 @@
 // WAP to evaluate the given postfix expression
 
+// WAP to evaluate the given postfix expression
+
 #include<stdio.h>
 #include<math.h>
+int stack[20];
+int top = -1;
 
-char push(char stack[],int top, int x)
+void push(int x)
 {
     stack[++top] = x;
-    return stack[top];
 }
 
-int pop(char stack[],int top)
+int pop()
 {
     return stack[top--];
 }
@@ -25,9 +28,9 @@ int isdigit(int e)
 
 int main()
 {
-    char exp[20], stack[20];
+    char exp[20];
     char *e;
-    int n1,n2,n3,num,top=-1;
+    int n1,n2,n3,num;
     printf("Enter the expression :: ");
     scanf("%s",exp);
     e = exp;
@@ -36,12 +39,12 @@ int main()
         if(isdigit(*e))
         {
             num = *e - 48;
-            push(stack,top,num);
+            push(num);
         }
         else
         {
-            n1 = pop(stack,top);
-            n2 = pop(stack,top);
+            n1 = pop();
+            n2 = pop();
             switch(*e)
             {
             case '+':
@@ -71,10 +74,10 @@ int main()
 				break;
 			}
             }
-            push(stack,top,n3);
+            push(n3);
         }
         e++;
     }
-    printf("\nThe result of expression %s  =  %d\n\n",exp,pop(stack,top));
+    printf("\nThe result of expression %s  =  %d\n\n",exp,pop());
     return 0;
 }
