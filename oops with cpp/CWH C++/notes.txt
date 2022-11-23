@@ -1,0 +1,21 @@
+Programming With C++
+* Bjarne Stroustrup, 1979
+* Very close to Hardware, direcly instructs the hardware
+* Object Oriented programming
+* Extension of C
+* Fast program
+* More control over system resources
+* Memory Management
+* High performance
+* 2011 - C++ 11
+* 2014 - C++ 14
+* 2017 - C++ 17
+* variable : containers to store data
+* comments : ignore this line or set of text, doesn't execute
+* Based on scope: 1. Local variables(local scope) 2. Global variables(global scope)
+* Scope : scope of a variable is the region where the existence of variable is valid
+* Data types : 1. Built-in 2. User defined 3. Derived
+	1, int, float, char, double, bool
+	2. struct, union, enum
+	3. array, function, pointer
+* Local variable has high precedence over global variables
