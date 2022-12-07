@@ -19,3 +19,13 @@ Programming With C++
 	2. struct, union, enum
 	3. array, function, pointer
 * Local variable has high precedence over global variables
+* Constants : const keyword is used for the same, when we don't wish to change a value        until the program ends.
+*Manipulators : <iomanip> header file : endl, setw
+*Operator precedence : if precedence is same, associativity is checked.
+* Control Structures : 
+	1. Sequence structure    2. Selection structure     3. Loop structure
+	1. start->action1->act2->act3->end
+	2. start->condition checked->loop block executed->exit
+	3. start->var init->condition checked->block executed until condition false->var increamented->exit
+* Looping : 1. for 2. while 3. do while
+	1. 
