@@ -17,6 +17,9 @@ struct node *insert(struct node *head){
 		ptr=ptr->next;
 	}
 	ptr->next=NULL;
+	printf("Enter the number : ");
+	scanf("%d",&ptr->data);
+	return head;
 }
 
 int main(){
